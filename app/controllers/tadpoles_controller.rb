@@ -3,7 +3,9 @@ class TadpolesController < ApplicationController
 
   # add your metamorphose action here
 def metamorphose
-
+#makes a new frog with tadpoles name, color, pond_id
+frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
+   #deletes the tadpole from the database
 end
 
   def index
