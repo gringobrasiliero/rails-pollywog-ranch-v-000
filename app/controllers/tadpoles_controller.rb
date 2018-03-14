@@ -6,6 +6,13 @@ def metamorphose
 #makes a new frog with tadpoles name, color, pond_id
 frog = Frog.new(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
    #deletes the tadpole from the database
+   if frog.save
+     @tadpole.destroy
+     redirect_to frog
+   else
+     render :show
+   end
+
 end
 
   def index
